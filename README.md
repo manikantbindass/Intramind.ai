@@ -2,9 +2,7 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=300&section=header&text=Intramind.ai&fontSize=90&animation=fadeIn&fontAlignY=38" />
 </div>
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=manikantbindass&show_icons=true&theme=tokyonight" alt="manikantbindass's GitHub stats" />
-</p>
+
 
 # Intramind.ai
 
