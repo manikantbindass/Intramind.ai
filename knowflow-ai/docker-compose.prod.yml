@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  backend:
+    image: ${DOCKER_REGISTRY}/knowflow-backend:latest
+    ports:
+      - "80:8000"
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+    restart: always
+
+  frontend:
+    image: ${DOCKER_REGISTRY}/knowflow-frontend:latest
+    ports:
+      - "443:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=${API_URL}
+    restart: always
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=knowflow
+    volumes:
+      - postgres_prod_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres_prod_data:
